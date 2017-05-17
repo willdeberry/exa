@@ -94,6 +94,10 @@ impl FileFilter {
         }
 
         files.retain(|f| !self.ignore_patterns.is_ignored(f));
+
+        if self.git_ignore {
+            files.retain(|f| !f.is_git_ignored())
+        }
     }
 
     /// Remove every file in the given vector that does *not* pass the

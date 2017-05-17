@@ -376,6 +376,15 @@ impl<'dir> File<'dir> {
             },
         }
     }
+
+    /// `true` if this file is being tracked by Git *and* is being ignored by
+    /// it; `false` otherwise.
+    pub fn is_git_ignored(&self) -> bool {
+        match self.dir {
+            None       => false,
+            Some(dir)  => dir.git_ignored(&self.path),
+        }
+    }
 }
 
 

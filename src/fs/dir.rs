@@ -39,7 +39,7 @@ impl Dir {
         Ok(Dir {
             contents: contents,
             path: path.to_path_buf(),
-            git: if git { Git::scan(path).ok() } else { None },
+            git: if git { Git::scan(path) } else { None },
         })
     }
 
@@ -73,6 +73,13 @@ impl Dir {
             (&Some(ref git), false)  => git.status(path),
             (&Some(ref git), true)   => git.dir_status(path),
             (&None, _)               => fields::Git::empty()
+        }
+    }
+
+    pub fn git_ignored(&self, path: &Path) -> bool {
+        match self.git {
+            Some(ref git) => git.should_ignore(path),
+            None => false,
         }
     }
 }
