@@ -65,6 +65,10 @@ pub struct FileFilter {
     /// Glob patterns to ignore. Any file name that matches *any* of these
     /// patterns won't be displayed in the list.
     ignore_patterns: IgnorePatterns,
+
+    /// Whether to ignore files if they’re in a Git repository and that
+    /// repository’s ignore rules apply to the file.
+    git_ignore: bool,
 }
 
 impl FileFilter {
@@ -78,6 +82,7 @@ impl FileFilter {
             sort_field:      SortField::deduce(matches)?,
             show_invisibles: matches.opt_present("all"),
             ignore_patterns: IgnorePatterns::deduce(matches)?,
+            git_ignore:      matches.opt_present("git-ignore"),
         })
     }
 

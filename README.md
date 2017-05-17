@@ -49,6 +49,7 @@ These options are available when running with --long (`-l`):
 - **-U**, **--created**: use the created timestamp field
 - **-@**, **--extended**: list each file's extended attributes and sizes
 - **--git**: list each file's Git status, if tracked
+- **--git-ignore**: ignore files that are ignored by Git
 
 - Valid **--color** options are **always**, **automatic**, and **never**.
 - Valid sort fields are **accessed**, **created**, **extension**, **Extension**, **inode**, **modified**, **name**, **Name**, **size**, and **none**. Fields starting with a capital letter are case-sensitive.

@@ -85,6 +85,7 @@ impl Options {
 
         if cfg!(feature="git") {
             opts.optflag("", "git", "list each file's git status");
+            opts.optflag("", "git-ignore", "ignore files that are ignored by Git");
         }
 
         if xattr::ENABLED {

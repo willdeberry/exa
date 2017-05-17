@@ -42,5 +42,6 @@ LONG VIEW OPTIONS
   -U, --created      use the created timestamp field
 "##;
 
-pub static GIT_HELP:      &'static str = r##"  --git              list each file's Git status, if tracked"##;
+pub static GIT_HELP:      &'static str = r##"  --git              list each file's Git status, if tracked
+  --git-ignore       ignore files that are ignored by Git"##;
 pub static EXTENDED_HELP: &'static str = r##"  -@, --extended     list each file's extended attributes and sizes"##;

@@ -32,6 +32,7 @@ __exa() {
         {-u,--accessed}"[Use the accessed timestamp field]" \
         {-U,--created}"[Use the created timestamp field]" \
         --git"[List each file's Git status, if tracked]" \
+        --git-ignore"[Ignore files that are ignored by Git]" \
         {-@,--extended}"[List each file's extended attributes and sizes]" \
         '*:filename:_files'
 }

@@ -58,5 +58,6 @@ complete -c exa -s 'u' -l 'accessed' -d "Use the accessed timestamp field"
 complete -c exa -s 'U' -l 'created'  -d "Use the created timestamp field"
 
 # Optional extras
-complete -c exa -s 'g' -l 'git'      -d "List each file's Git status, if tracked"
-complete -c exa -s '@' -l 'extended' -d "List each file's extended attributes and sizes"
+complete -c exa -s 'g' -l 'git'        -d "List each file's Git status, if tracked"
+complete -c exa -s 'g' -l 'git-ignore' -d "Ignore files that are ignored by Git"
+complete -c exa -s '@' -l 'extended'   -d "List each file's extended attributes and sizes"
