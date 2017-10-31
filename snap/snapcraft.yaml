@@ -13,7 +13,7 @@ confinement: classic
 
 apps:
   exa:
-    command: exa
+    command: bin/exa
 
 parts:
   exa:
@@ -23,3 +23,4 @@ parts:
       - libgit2-24
       - cmake
       - libz-dev
+      - make
